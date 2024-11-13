@@ -1,8 +1,13 @@
 // src/components/TitleSection.js
-
-import React from 'react';
+import React, { useState } from 'react';
 
 const TitleSection = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLoginToggle = () => {
+    setIsLoggedIn(!isLoggedIn);
+  };
+
   return (
     <section id="title" className="gradient-background">
       <div className="container col-xxl-8 px-4 pt-2">
@@ -15,8 +20,8 @@ const TitleSection = () => {
             <p>Web Developer</p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
               <a
-                href="https://drive.google.com/file/d/1ORqZqYTOWThpKoFd8LoyXJuGJjAZDmbG/view?usp=sharing"
-                target="_blank"
+                href={isLoggedIn ? "https://drive.google.com/file/d/1ORqZqYTOWThpKoFd8LoyXJuGJjAZDmbG/view?usp=sharing" : "#"}
+                target={isLoggedIn ? "_blank" : ""}
                 rel="noopener noreferrer"
               >
                 <button type="button" className="btn btn-outline-light btn-lg px-4">
@@ -24,9 +29,12 @@ const TitleSection = () => {
                     <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                     <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5z" />
                   </svg>
-                  Resume
+                  {isLoggedIn ? "Download Resume" : "Login to Download Resume"}
                 </button>
               </a>
+              <button onClick={handleLoginToggle} className="btn btn-outline-light btn-sm mt-2">
+                {isLoggedIn ? "Log Out" : "Log In"}
+              </button>
             </div>
           </div>
         </div>
