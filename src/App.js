@@ -4,18 +4,18 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import TitleSection from './components/TitleSection';
-import LinksSection from './components/LinksSection';
-import ProjectsSection from './components/ProjectsSection';
-import Footer from './components/Footer';
+import TitleSection from './components/titleSection';
+import LinksSection from './components/linkSection';
+import ProjectsSection from './components/projectSection';
+import Footer from './components/footer';
 
 function App() {
   return (
     <div className="App">
-      <TitleSection />
-      <LinksSection />
-      <ProjectsSection />
-      <Footer />
+      <titleSection />
+      <linksSection />
+      <projectsSection />
+      <footer />
     </div>
   );
 }
