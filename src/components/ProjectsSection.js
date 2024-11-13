@@ -1,57 +1,46 @@
 // src/components/ProjectsSection.js
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ProjectCard from './ProjectCard';
 
 const ProjectsSection = () => {
-  const [filter, setFilter] = useState('');
+  const sectionRef = useRef(null);
+  const [inView, setInView] = useState(false);
 
-  const projects = [
-    {
-      title: "To-do list application",
-      description: "Developed a To-Do application using ReactJS.",
-      link: "https://github.com/anuvihas/Todo-List-Application",
-      category: "React"
-    },
-    {
-      title: "QR code generator",
-      description: "Developed a QR Code generator application using Node.js.",
-      link: "https://github.com/anuvihas/QR-Code-Generator",
-      category: "Node.js"
-    },
-    {
-      title: "Weather Application",
-      description: "Developed a Weather application using Node.js with Express.",
-      link: "https://github.com/anuvihas/Weather-Application",
-      category: "Node.js"
-    }
-  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = sectionRef.current;
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.8) {
+          setInView(true);
+        }
+      }
+    };
 
-  const filteredProjects = projects.filter(project => 
-    project.category.toLowerCase().includes(filter.toLowerCase())
-  );
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on initial load
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <section id="projects">
-      <div className="container">
-        <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
-          <h2 className="display-4 fw-normal">Projects</h2>
-          <input
-            type="text"
-            placeholder="Filter by category..."
-            onChange={(e) => setFilter(e.target.value)}
-            className="form-control mb-4"
-          />
-        </div>
-        <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              link={project.link}
-            />
-          ))}
-        </div>
+    <section
+      id="projects"
+      className={`container ${inView ? 'in-view' : ''}`}
+      ref={sectionRef}
+    >
+      <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h2 className="display-4 fw-normal">Projects</h2>
+      </div>
+      <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <ProjectCard
+          title="To-do list application"
+          description="Developed a To-Do application using ReactJS."
+          link="https://github.com/anuvihas/Todo-List-Application"
+        />
+        {/* More Project Cards */}
       </div>
     </section>
   );

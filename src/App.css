@@ -1,58 +1,138 @@
-/* App.css */
-body {
-  font-family: 'Arial', sans-serif;
+/* src/App.css */
+
+/* Make the body fill the entire viewport */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
 }
 
-.profile {
-  width: 100%;
-  border-radius: 50%;
-  max-width: 250px;
-  object-fit: cover;
+/* Full-page section styles */
+section {
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  scroll-snap-align: start; /* Ensures snap for scroll behavior */
+  scroll-snap-type: y mandatory; /* Enforces snap scrolling */
+  overflow: hidden;
 }
 
-.gradient-background {
-  background: linear-gradient(135deg, #6e7e8b, #3b4b5c);
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Gradient background for Title section */
+#title {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
 }
 
-.text-body-emphasis {
-  color: #f7f7f7;
+/* Gradient background for Footer */
+#contact {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
 }
 
-.card {
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card-header {
+/* Link Section and Project Section Layout */
+#links, #projects {
   background-color: #f8f9fa;
 }
 
-.card-body {
-  background-color: white;
+/* Styling for Profile Image */
+.profile {
+  max-width: 100%;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
-.btn-outline-dark {
-  border: 2px solid #343a40;
-}
-
-.nav-link {
-  color: #495057;
-}
-
-.nav-link:hover {
-  color: #007bff;
-}
-/* src/App.css */
-
-/* Fade-in and slide-in effect for TitleSection */
-#title {
+/* Add animations to each section */
+#title, #links, #projects {
   opacity: 0;
-  transform: translateY(30px); /* Start off-screen */
+  transform: translateY(30px);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-#title.in-view {
+#title.in-view, #links.in-view, #projects.in-view {
   opacity: 1;
-  transform: translateY(0); /* Slide into place */
+  transform: translateY(0);
+}
+
+/* Hover effect for Project Cards */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+}
+
+.project-card .card-body {
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .card-body {
+  opacity: 0.8;
+}
+
+/* Styling for Footer Navigation */
+footer {
+  background: #343a40;
+  color: white;
+  padding: 20px;
+}
+
+footer .nav-item {
+  margin-right: 20px;
+}
+
+footer .nav-link {
+  color: #f8f9fa;
+}
+
+footer .nav-link:hover {
+  color: #ff416c;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.back-to-top:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  #title h1 {
+    font-size: 2.5rem;
+  }
+
+  #links h2 {
+    font-size: 1.75rem;
+  }
 }
