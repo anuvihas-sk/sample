@@ -82,6 +82,11 @@ section {
 /* Profile Image Styling */
 .profile {
   max-width: 100%;
+  border-radius: 100%;
+}
+
+.profile1 {
+  max-width: 20%;
   border-radius: 50%;
 }
 

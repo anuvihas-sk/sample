@@ -33,7 +33,7 @@ const LinksSection = () => {
       <div className="p-5 text-center bg-body-tertiary">
         <div className="container py-5">
           <h2 className="text-body-emphasis">"Opportunities don't happen, you create them"</h2>
-          <img className="profile" src="images/anuvihas.jpeg" alt="Anuvihas S K" />
+          <img className="profile1" src="/images/anuvihas.jpg" alt="Anuvihas S K" />
           <p className="col-lg-8 mx-auto lead mt-2">India</p>
         </div>
         <div className="container">
