@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,9 +15,10 @@ function App() {
   };
 
   return (
-      <div className="App">
-        <nav className="navbar navbar-light fixed-top">
-          <ul className="nav">
+    <div className="App">
+      <nav className="navbar navbar-light fixed-top">
+        <div className="container">
+          <ul className="nav justify-content-center w-100">
             <li className="nav-item">
               <button onClick={() => scrollToSection('title')} className="nav-link">Home</button>
             </li>
@@ -32,12 +32,14 @@ function App() {
               <button onClick={() => scrollToSection('contact')} className="nav-link">Contact</button>
             </li>
           </ul>
-        </nav>
-        <TitleSection />
-        <LinksSection />
-        <ProjectsSection />
-        <Footer />
-      </div>  );
+        </div>
+      </nav>
+      <TitleSection />
+      <LinksSection />
+      <ProjectsSection />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

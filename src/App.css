@@ -11,16 +11,51 @@ body, html {
   scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
-/* Full-page sections */
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.8); /* Light background with transparency */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 15px 0; /* Padding for better spacing */
+}
+
+/* Centering navbar items */
+.navbar .nav {
+  display: flex;
+  justify-content: center;  /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
+  width: 100%;
+}
+
+.nav-item {
+  margin: 0 15px; /* Spacing between navbar items */
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333; /* Dark text color */
+  padding: 10px 20px;
+  border-radius: 30px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-link:hover {
+  background-color: #ff7e5f; /* Background color on hover */
+  color: white; /* Text color on hover */
+}
+
+/* Sections Styling */
 section {
   height: 100vh; /* Make sections take up full height of the viewport */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 20px;
-  scroll-snap-align: start;
-  scroll-snap-type: y mandatory;
-  /* Removed animation-related styles */
 }
 
 /* Section Background Colors & Gradients */
@@ -48,96 +83,6 @@ section {
 .profile {
   max-width: 100%;
   border-radius: 50%;
-}
-
-/* Navbar styling */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.nav-link {
-  font-weight: 600;
-  padding: 10px 20px;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #ff7e5f; /* Subtle hover effect */
-}
-
-/* Section Titles */
-h2, h3, h4 {
-  text-align: center;
-  font-weight: 600;
-}
-
-h2 {
-  font-size: 3rem;
-  color: #333;
-}
-
-h3 {
-  font-size: 2.5rem;
-  color: #f8f9fa;
-}
-
-h4 {
-  font-size: 1.75rem;
-  color: #f8f9fa;
-}
-
-/* Responsive Design */
-@media (max-width: 767px) {
-  .profile {
-    width: 70%;
-    height: auto;
-  }
-
-  .navbar {
-    padding: 10px 20px;
-  }
-
-  .nav-link {
-    padding: 8px 16px;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-  }
-
-  h3 {
-    font-size: 2rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  h2 {
-    font-size: 2.8rem;
-  }
-
-  h3 {
-    font-size: 2.2rem;
-  }
-}
-
-/* Button Styling */
-button {
-  border-radius: 30px;
-  padding: 12px 30px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Styling */
