@@ -1,6 +1,6 @@
 // src/components/Footer.js
-
 import React from 'react';
+import ContactForm from './ContactForm';
 
 const Footer = () => {
   return (
@@ -12,6 +12,7 @@ const Footer = () => {
             <li className="nav-item"><a href="#links" className="nav-link px-2 text-body-secondary">About</a></li>
             <li className="nav-item"><a href="#projects" className="nav-link px-2 text-body-secondary">Projects</a></li>
           </ul>
+          <ContactForm />
           <p className="text-center text-body-secondary">© Anuvihas</p>
         </footer>
       </div>
