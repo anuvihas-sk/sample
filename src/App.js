@@ -2,7 +2,6 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ThemeProvider } from './components/ThemeContext';
 import TitleSection from './components/TitleSection';
 import LinksSection from './components/LinksSection';
 import ProjectsSection from './components/ProjectsSection';
@@ -11,11 +10,12 @@ import Footer from './components/Footer';
 function App() {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
-    element.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });  // This enables smooth scroll
+    }
   };
 
   return (
-    <ThemeProvider>
       <div className="App">
         <nav className="navbar navbar-light fixed-top">
           <ul className="nav">
@@ -37,9 +37,7 @@ function App() {
         <LinksSection />
         <ProjectsSection />
         <Footer />
-      </div>
-    </ThemeProvider>
-  );
+      </div>  );
 }
 
 export default App;
