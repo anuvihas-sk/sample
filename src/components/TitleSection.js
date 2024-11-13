@@ -6,28 +6,28 @@ const TitleSection = () => {
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const section = sectionRef.current;
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.8) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
           setInView(true);
+        } else {
+          setInView(false);
         }
-      }
-    };
+      });
+    }, { threshold: 0.5 }); // Trigger animation when 50% of the section is visible
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on initial load
+    const section = sectionRef.current;
+    if (section) observer.observe(section);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      if (section) observer.unobserve(section);
     };
   }, []);
 
   return (
     <section
       id="title"
-      className={`gradient-background ${inView ? 'in-view' : ''}`}
+      className={`gradient-background ${inView ? 'fade-in' : ''}`}
       ref={sectionRef}
     >
       <div className="container col-xxl-8 px-4 pt-2">

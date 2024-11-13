@@ -7,28 +7,28 @@ const ProjectsSection = () => {
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const section = sectionRef.current;
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.8) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
           setInView(true);
+        } else {
+          setInView(false);
         }
-      }
-    };
+      });
+    }, { threshold: 0.5 });
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on initial load
+    const section = sectionRef.current;
+    if (section) observer.observe(section);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      if (section) observer.unobserve(section);
     };
   }, []);
 
   return (
     <section
       id="projects"
-      className={`container ${inView ? 'in-view' : ''}`}
+      className={`container ${inView ? 'fade-in' : ''}`}
       ref={sectionRef}
     >
       <div className="pricing-header p-3 pb-md-4 mx-auto text-center">

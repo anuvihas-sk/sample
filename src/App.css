@@ -1,6 +1,6 @@
 /* src/App.css */
 
-/* Make the body fill the entire viewport */
+/* Basic body and HTML setup */
 body, html {
   margin: 0;
   padding: 0;
@@ -9,130 +9,61 @@ body, html {
   font-family: Arial, sans-serif;
 }
 
-/* Full-page section styles */
+/* Full-page sections */
 section {
-  height: 100vh; /* Full height of the viewport */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 20px;
-  scroll-snap-align: start; /* Ensures snap for scroll behavior */
-  scroll-snap-type: y mandatory; /* Enforces snap scrolling */
-  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-type: y mandatory;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-/* Enable smooth scrolling */
-html {
-  scroll-behavior: smooth;
+section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Gradient background for Title section */
+/* Fade-in animation for the sections */
 #title {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
 }
 
-/* Gradient background for Footer */
-#contact {
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
-  color: white;
-}
-
-/* Link Section and Project Section Layout */
 #links, #projects {
   background-color: #f8f9fa;
 }
 
-/* Styling for Profile Image */
+/* Profile Image Styling */
 .profile {
   max-width: 100%;
   border-radius: 50%;
-  margin-bottom: 20px;
 }
 
-/* Add animations to each section */
-#title, #links, #projects {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-#title.in-view, #links.in-view, #projects.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Hover effect for Project Cards */
-.project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #f8f9fa;
-}
-
-.project-card .card-body {
-  transition: opacity 0.3s ease;
-}
-
-.project-card:hover .card-body {
-  opacity: 0.8;
-}
-
-/* Styling for Footer Navigation */
-footer {
-  background: #343a40;
-  color: white;
-  padding: 20px;
-}
-
-footer .nav-item {
-  margin-right: 20px;
-}
-
-footer .nav-link {
-  color: #f8f9fa;
-}
-
-footer .nav-link:hover {
-  color: #ff416c;
-}
-
-/* Back to Top Button */
-.back-to-top {
+/* Navbar styling */
+.navbar {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 15px;
-  font-size: 20px;
-  cursor: pointer;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.back-to-top.show {
-  opacity: 1;
-  transform: scale(1);
+.nav-link {
+  font-weight: 600;
+  padding: 10px 20px;
 }
 
-.back-to-top:hover {
-  background-color: #0056b3;
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-  #title h1 {
-    font-size: 2.5rem;
-  }
-
-  #links h2 {
-    font-size: 1.75rem;
+/* Responsive Design */
+@media (max-width: 767px) {
+  .profile {
+    width: 80%;
+    height: auto;
   }
 }
