@@ -43,3 +43,16 @@ body {
 .nav-link:hover {
   color: #007bff;
 }
+/* src/App.css */
+
+/* Fade-in and slide-in effect for TitleSection */
+#title {
+  opacity: 0;
+  transform: translateY(30px); /* Start off-screen */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#title.in-view {
+  opacity: 1;
+  transform: translateY(0); /* Slide into place */
+}
