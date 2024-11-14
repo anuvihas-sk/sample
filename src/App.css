@@ -9,6 +9,8 @@ body, html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f2f5;
   scroll-behavior: smooth; /* Enable smooth scrolling */
+  display: flex;
+  flex-direction: column; /* Ensure the body stretches properly */
 }
 
 /* Navbar Styling */
@@ -21,9 +23,10 @@ body, html {
   background-color: rgba(255, 255, 255, 0.8); /* Light background with transparency */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   padding: 15px 0; /* Padding for better spacing */
+  width: 100%; /* Ensure navbar spans the full width */
+  transition: all 0.3s ease; /* Smooth transition for navbar */
 }
 
-/* Centering navbar items */
 .navbar .nav {
   display: flex;
   justify-content: center;  /* Centers items horizontally */
@@ -56,6 +59,8 @@ section {
   justify-content: center;
   align-items: center;
   padding: 0 20px;
+  box-sizing: border-box;
+  scroll-padding-top: 60px; /* To prevent section contents from being covered by the fixed navbar */
 }
 
 /* Section Background Colors & Gradients */
@@ -65,7 +70,7 @@ section {
 }
 
 #links {
-  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple-blue gradient */
+  background: linear-gradient(135deg, #65418b, #9b87b4); /* Purple-blue gradient */
   color: white;
 }
 
@@ -87,6 +92,7 @@ section {
 
 .profile1 {
   max-width: 20%;
+  margin-top: 50px; 
   border-radius: 50%;
 }
 
@@ -151,5 +157,54 @@ form button:hover {
 
 /* Section Specific Animations (Removed the opacity and transforms for smooth scroll) */
 #title, #links, #projects, #contact {
+
+
+
   /* No more opacity or transform styles */
+}
+
+/* src/components/ProjectsSection.css */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusts card size for responsiveness */
+  gap: 20px;
+  margin-top: 20px;
+  padding: 0 10px; /* Prevents content from getting too close to edges */
+}
+
+.project-item {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* .fade-in {
+  animation: fadeIn 0.6s ease-out;
+} */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Styling the category filter section */
+.btn-group {
+  margin-top: 20px;
+}
+
+.btn {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/* Adjust grid responsiveness */
+@media (max-width: 767px) {
+  .project-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Full width for mobile */
+  }
 }
