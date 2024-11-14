@@ -5,9 +5,9 @@ import React from 'react';
 const ProjectCard = ({ title, description, link }) => {
   return (
     <div className="col">
-      <div className="card mb-4 rounded-3 shadow-sm">
+      <div className="card mb-4 rounded-circle shadow-sm ">
         {/* Card Header with title */}
-        <div className="card-header py-3">
+        <div className="card-header py-3 bg-dark text-light">
           <h4 className="my-0 fw-normal">{title}</h4>
         </div>
         {/* Card Body with description and button */}

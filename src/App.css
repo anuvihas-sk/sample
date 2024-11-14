@@ -155,19 +155,13 @@ form button:hover {
   background-color: #feb47b; /* Light orange color on hover */
 }
 
-/* Section Specific Animations (Removed the opacity and transforms for smooth scroll) */
-#title, #links, #projects, #contact {
 
-
-
-  /* No more opacity or transform styles */
-}
 
 /* src/components/ProjectsSection.css */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusts card size for responsiveness */
-  gap: 20px;
+  gap: 11px;
   margin-top: 20px;
   padding: 0 10px; /* Prevents content from getting too close to edges */
 }

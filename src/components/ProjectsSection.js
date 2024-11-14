@@ -9,39 +9,33 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: 'To-do list application',
+      title: 'To-do list Application',
       description: 'Developed a To-Do application using ReactJS.',
       link: 'https://github.com/anuvihas/Todo-List-Application',
       category: 'Web Development',
     },
     {
-      title: 'Weather App',
+      title: 'Weather Application',
       description: 'Created a weather forecasting application using OpenWeatherMap API and React.',
       link: 'https://github.com/anuvihas/Weather-App',
       category: 'Web Development',
     },
     {
-      title: 'Chat App',
+      title: 'Chat Application',
       description: 'Developed a full-stack e-commerce website using React, Node.js, and MongoDB.',
       link: 'https://github.com/anuvihas/Ecommerce-Site',
       category: 'Web Development',
     },
     {
       title: 'QR Code Generator',
-      description: 'Built a personal portfolio website to showcase skills, projects, and experience.',
-      link: 'https://github.com/anuvihas/Portfolio',
+      description: 'Created a QR code generator application using React.',
+      link: 'https://github.com/anuvihas/QR-Code-Generator',
       category: 'Web Development',
     },
     {
-      title: 'Machine Learning Model',
-      description: 'Built a machine learning model for predicting house prices using Python and scikit-learn.',
-      link: 'https://github.com/anuvihas/ML-House-Prices',
-      category: 'Data Science',
-    },
-    {
-      title: 'Mobile Expense Tracker',
-      description: 'Developed a mobile app for expense tracking using Flutter and Firebase.',
-      link: 'https://github.com/anuvihas/Expense-Tracker',
+      title: 'Authentication Application',
+      description: 'Developed an authentication application using React and Firebase.',
+      link: 'https://github.com/anuvihas/Authentication-App',
       category: 'Mobile Apps',
     },
   ];
@@ -101,13 +95,6 @@ const ProjectsSection = () => {
             onClick={() => setSelectedCategory('Mobile Apps')}
           >
             Mobile Apps
-          </button>
-          <button
-            type="button"
-            className={`btn ${selectedCategory === 'Data Science' ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => setSelectedCategory('Data Science')}
-          >
-            Data Science
           </button>
         </div>
       </div>
