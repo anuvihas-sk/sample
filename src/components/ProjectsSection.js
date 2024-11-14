@@ -1,122 +1,121 @@
 // src/components/ProjectsSection.js
-import React, { useEffect, useRef, useState } from 'react';
-import ProjectCard from './ProjectCard';
+import React from 'react';
 
 const ProjectsSection = () => {
-  const sectionRef = useRef(null);
-  const [inView, setInView] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('All'); // Default is 'All'
-
-  const projects = [
-    {
-      title: 'To-do list Application',
-      description: 'Developed a To-Do application using ReactJS.',
-      link: 'https://github.com/anuvihas/Todo-List-Application',
-      category: 'Web Development',
-    },
-    {
-      title: 'Weather Application',
-      description: 'Created a weather forecasting application using OpenWeatherMap API and React.',
-      link: 'https://github.com/anuvihas/Weather-App',
-      category: 'Web Development',
-    },
-    {
-      title: 'Chat Application',
-      description: 'Developed a full-stack e-commerce website using React, Node.js, and MongoDB.',
-      link: 'https://github.com/anuvihas-sk/chat-app',
-      category: 'Web Development',
-    },
-    {
-      title: 'QR Code Generator',
-      description: 'Created a QR code generator application using React.',
-      link: 'https://github.com/anuvihas/QR-Code-Generator',
-      category: 'Web Development',
-    },
-    {
-      title: 'Authentication Application',
-      description: 'Developed an authentication application using React and Firebase.',
-      link: 'https://github.com/anuvihas-sk/Authentication_App',
-      category: 'App Development',
-    },
-    {
-      title: 'Reddit Bot',
-      description: 'Created a Reddit bot using Python and the PRAW library.',
-      link: 'https://github.com/anuvihas-sk/Redditbot',
-      category: 'App Development',
-    },
-  ];
-
-  // Filter projects based on the selected category
-  const filteredProjects = selectedCategory === 'All'
-    ? projects
-    : projects.filter(project => project.category === selectedCategory);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-        } else {
-          setInView(false);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    const section = sectionRef.current;
-    if (section) observer.observe(section);
-
-    return () => {
-      if (section) observer.unobserve(section);
-    };
-  }, []);
-
   return (
-    <section
-      id="projects"
-      className={`container ${inView ? 'fade-in' : ''}`}
-      ref={sectionRef}
-    >
-      <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <h2 className="display-4 fw-normal">Projects</h2>
-
-        {/* Category Filter Section */}
-        <div className="btn-group" role="group" aria-label="Category Filter">
-          <button
-            type="button"
-            className={`btn ${selectedCategory === 'All' ? 'btn-dark' : 'btn-dark'}`}
-            onClick={() => setSelectedCategory('All')}
-          >
-            All
-          </button>
-          <button
-            type="button"
-            className={`btn ${selectedCategory === 'Web Development' ? 'btn-dark' : 'btn-dark'}`}
-            onClick={() => setSelectedCategory('Web Development')}
-          >
-            Web Development
-          </button>
-          <button
-            type="button"
-            className={`btn ${selectedCategory === 'App Development' ? 'btn-dark' : 'btn-dark'}`}
-            onClick={() => setSelectedCategory('App Development')}
-          >
-            App Development
-          </button>
+    <section id="projects">
+      <div className="project">
+        <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h2 className="display-4 fw-normal">Projects</h2>
+          <p className="fs-5 text-body-secondary">See through it</p>
         </div>
-      </div>
-
-      {/* Projects Grid Section */}
-      <div className="project-grid">
-        {/* Render Project Cards based on the selected category */}
-        {filteredProjects.map((project, index) => (
-          <div className="project-item" key={index}>
-            <ProjectCard
-              title={project.title}
-              description={project.description}
-              link={project.link}
-            />
+        
+        <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          {/* Project 1 */}
+          <div className="col">
+            <div className="card mb-4 rounded-3 shadow-sm">
+              <div className="card-header py-3">
+                <h4 className="my-0 fw-normal">To-do List Application</h4>
+              </div>
+              <div className="card-body">
+                <ul className="list-unstyled mt-3 mb-4">
+                  <li>Developed a To-Do application using ReactJS to demonstrate fundamental React concepts. This application allows users to create, edit, and delete tasks.</li>
+                </ul>
+                <a href="https://github.com/anuvihas/Todo-List-Application" target="_blank" rel="noopener noreferrer">
+                  <button type="button" className="w-100 btn btn-lg btn-outline-dark">Click Here</button>
+                </a>
+              </div>
+            </div>
           </div>
-        ))}
+
+          {/* Project 2 */}
+          <div className="col">
+            <div className="card mb-4 rounded-3 shadow-sm">
+              <div className="card-header py-3">
+                <h4 className="my-0 fw-normal">QR Code Generator</h4>
+              </div>
+              <div className="card-body">
+                <ul className="list-unstyled mt-3 mb-4">
+                  <li>Developed a QR Code generator application using Node.js to provide an efficient way to create and manage QR codes. This application allows users to generate and download QR codes in various formats such as PNG, JPEG, and SVG.</li>
+                </ul>
+                <a href="https://github.com/anuvihas/QR-Code-Generator" target="_blank" rel="noopener noreferrer">
+                  <button type="button" className="w-100 btn btn-lg btn-outline-dark">Click Here</button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Project 3 */}
+          <div className="col">
+            <div className="card mb-4 rounded-3 shadow-sm">
+              <div className="card-header py-3">
+                <h4 className="my-0 fw-normal">Weather Application</h4>
+              </div>
+              <div className="card-body">
+                <ul className="list-unstyled mt-3 mb-4">
+                  <li>Developed a Weather application using Node.js with Express.js and API to fetch weather data. This application allows users to search for weather data for any city in the world.</li>
+                </ul>
+                <a href="https://github.com/anuvihas/Weather-Application/tree/394a38f24c58806c6021ce807f3928e68b82d2ff" target="_blank" rel="noopener noreferrer">
+                  <button type="button" className="w-100 btn btn-lg btn-outline-dark">Click Here</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          {/* Project 4 */}
+          <div className="col">
+            <div className="card mb-4 rounded-3 shadow-sm">
+              <div className="card-header py-3">
+                <h4 className="my-0 fw-normal">Authentication Application</h4>
+              </div>
+              <div className="card-body">
+                <ul className="list-unstyled mt-3 mb-4">
+                  <li>Developed an authentication application using React and Firebase, allowing users to sign up, login, and manage their profiles securely.</li>
+                </ul>
+                <a href="https://github.com/anuvihas-sk/Authentication_App" target="_blank" rel="noopener noreferrer">
+                  <button type="button" className="w-100 btn btn-lg btn-outline-dark">Click Here</button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Project 5 */}
+          <div className="col">
+            <div className="card mb-4 rounded-3 shadow-sm">
+              <div className="card-header py-3">
+                <h4 className="my-0 fw-normal">Reddit Bot</h4>
+              </div>
+              <div className="card-body">
+                <ul className="list-unstyled mt-3 mb-4">
+                  <li>Created a Reddit bot using Python and the PRAW library. This bot automates tasks like posting, commenting, and voting on Reddit.</li>
+                </ul>
+                <a href="https://github.com/anuvihas-sk/Redditbot" target="_blank" rel="noopener noreferrer">
+                  <button type="button" className="w-100 btn btn-lg btn-outline-dark">Click Here</button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Project 6 */}
+          <div className="col">
+            <div className="card mb-4 rounded-3 shadow-sm">
+              <div className="card-header py-3">
+                <h4 className="my-0 fw-normal">Chat Application</h4>
+              </div>
+              <div className="card-body">
+                <ul className="list-unstyled mt-3 mb-4">
+                  <li>Developed a full-stack chat application using React, Node.js, and MongoDB. The app allows users to send real-time messages in chat rooms.</li>
+                </ul>
+                <a href="https://github.com/anuvihas-sk/chat-app" target="_blank" rel="noopener noreferrer">
+                  <button type="button" className="w-100 btn btn-lg btn-outline-dark">Click Here</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
