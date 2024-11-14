@@ -23,7 +23,7 @@ const ProjectsSection = () => {
     {
       title: 'Chat Application',
       description: 'Developed a full-stack e-commerce website using React, Node.js, and MongoDB.',
-      link: 'https://github.com/anuvihas/Ecommerce-Site',
+      link: 'https://github.com/anuvihas-sk/chat-app',
       category: 'Web Development',
     },
     {
@@ -35,8 +35,14 @@ const ProjectsSection = () => {
     {
       title: 'Authentication Application',
       description: 'Developed an authentication application using React and Firebase.',
-      link: 'https://github.com/anuvihas/Authentication-App',
-      category: 'Mobile Apps',
+      link: 'https://github.com/anuvihas-sk/Authentication_App',
+      category: 'App Development',
+    },
+    {
+      title: 'Reddit Bot',
+      description: 'Created a Reddit bot using Python and the PRAW library.',
+      link: 'https://github.com/anuvihas-sk/Redditbot',
+      category: 'App Development',
     },
   ];
 
@@ -77,24 +83,24 @@ const ProjectsSection = () => {
         <div className="btn-group" role="group" aria-label="Category Filter">
           <button
             type="button"
-            className={`btn ${selectedCategory === 'All' ? 'btn-primary' : 'btn-secondary'}`}
+            className={`btn ${selectedCategory === 'All' ? 'btn-dark' : 'btn-dark'}`}
             onClick={() => setSelectedCategory('All')}
           >
             All
           </button>
           <button
             type="button"
-            className={`btn ${selectedCategory === 'Web Development' ? 'btn-primary' : 'btn-secondary'}`}
+            className={`btn ${selectedCategory === 'Web Development' ? 'btn-dark' : 'btn-dark'}`}
             onClick={() => setSelectedCategory('Web Development')}
           >
             Web Development
           </button>
           <button
             type="button"
-            className={`btn ${selectedCategory === 'Mobile Apps' ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => setSelectedCategory('Mobile Apps')}
+            className={`btn ${selectedCategory === 'App Development' ? 'btn-dark' : 'btn-dark'}`}
+            onClick={() => setSelectedCategory('App Development')}
           >
-            Mobile Apps
+            App Development
           </button>
         </div>
       </div>

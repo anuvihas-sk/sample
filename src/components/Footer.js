@@ -42,7 +42,7 @@ const Footer = () => {
           <h3 className="text-center text-light mb-4">Contact Me</h3>
           <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: '600px' }}>
             <div className="mb-3">
-              <label htmlFor="name" className="form-label text-light">Name</label>
+              <label htmlFor="name" className="form-label text-dark">Name</label>
               <input
                 type="text"
                 className="form-control"
@@ -54,7 +54,7 @@ const Footer = () => {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="email" className="form-label text-light">Email</label>
+              <label htmlFor="email" className="form-label text-dark">Email</label>
               <input
                 type="email"
                 className="form-control"
@@ -66,7 +66,7 @@ const Footer = () => {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="message" className="form-label text-light">Message</label>
+              <label htmlFor="message" className="form-label text-dark">Message</label>
               <textarea
                 className="form-control"
                 id="message"
@@ -77,7 +77,7 @@ const Footer = () => {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="btn btn-light w-100 mt-3">Send Message</button>
+            <button type="submit" className="btn btn-dark w-100 mt-3">Send Message</button>
           </form>
 
           {/* Footer text */}
