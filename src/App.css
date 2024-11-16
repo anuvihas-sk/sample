@@ -88,7 +88,7 @@ section {
 /* Profile Image Styling */
 .profile {
   max-width: 100%;
-  border-radius: 100%;
+  border-radius: 10%;
 }
 
 .profile1 {
@@ -160,4 +160,13 @@ form button:hover {
   padding: 300px; /* Add some padding */
 }
 
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  font-size: 2rem; /* Increase the size of the arrows */
+  font-weight: bold; /* Make the arrows bolder */
+  border-width: 2px; /* Increase the thickness of the border */
+}
+
+.carousel-control-prev, .carousel-control-next {
+  padding: 0.75rem; /* Adjust the padding if necessary */
+}
 
