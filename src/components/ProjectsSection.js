@@ -2,7 +2,13 @@ import React, { useEffect } from 'react';
 
 const ProjectsSection = () => {
   const projects = [
-
+    {
+      // title: "Chat Application",
+      // description:
+      //   "Developed a full-stack chat application using React, Node.js, and MongoDB. The app allows users to send real-time messages in chat rooms.",
+      link: "https://github.com/anuvihas-sk/chat-app",
+      image: "/images/chat.jpeg" // Project image
+    },
     {
       // title: "QR Code Generator",
       // description:
@@ -31,13 +37,7 @@ const ProjectsSection = () => {
       link: "https://github.com/anuvihas-sk/Redditbot",
       image: "/images/reddit.jpeg" // Project image
     },
-    {
-      // title: "Chat Application",
-      // description:
-      //   "Developed a full-stack chat application using React, Node.js, and MongoDB. The app allows users to send real-time messages in chat rooms.",
-      link: "https://github.com/anuvihas-sk/chat-app",
-      image: "/images/chat.jpeg" // Project image
-    },
+
   ];
 
   useEffect(() => {
