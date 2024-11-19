@@ -5,6 +5,11 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 const ProjectsSection = () => {
   const projects = [
     {
+      link: "https://github.com/anuvihas/Weather-Application",
+      image: "/images/weather.jpeg",
+     // description: "A weather forecast app using APIs and React.",
+    },
+    {
       link: "https://github.com/anuvihas-sk/chat-app",
       image: "/images/chat.jpeg",
       // title: "Chat App",
@@ -22,11 +27,7 @@ const ProjectsSection = () => {
       // title: "To-Do List App",
       // description: "Manage tasks efficiently with this minimal to-do app.",
     },
-    {
-      link: "https://github.com/anuvihas/Weather-Application",
-      image: "/images/weather.jpeg",
-     // description: "A weather forecast app using APIs and React.",
-    },
+
     {
       link: "https://github.com/anuvihas-sk/Redditbot",
       image: "/images/reddit.jpeg",
