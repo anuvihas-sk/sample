@@ -160,13 +160,51 @@ form button:hover {
   padding: 300px; /* Add some padding */
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
-  font-size: 2rem; /* Increase the size of the arrows */
-  font-weight: bold; /* Make the arrows bolder */
-  border-width: 2px; /* Increase the thickness of the border */
+.custom-control-prev,
+.custom-control-next {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 1 !important;
+  background-color: rgba(153, 13, 13, 0.5) !important;
+  padding: 10px 20px !important;
+  border-radius: 5px !important;
 }
 
-.carousel-control-prev, .carousel-control-next {
-  padding: 0.75rem; /* Adjust the padding if necessary */
+.custom-control-prev {
+  left: -50px !important;
 }
+
+.custom-control-next {
+  right: -50px !important;
+}
+
+
+/* Adjust for smaller screens */
+.carousel-item {
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 50px; /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item {
+    height: 50px; /* Adjust height for extra small screens */
+  }
+}
+.carousel-item {
+  height: 400px; /* Set a fixed height */
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover; /* Ensures the image scales properly */
+  object-position: center; /* Centers the image */
+}
+
 
