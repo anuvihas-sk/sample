@@ -1,47 +1,39 @@
-import React, { useEffect } from "react";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const ProjectsSection = () => {
   const projects = [
     {
       link: "https://github.com/anuvihas-sk/chat-app",
       image: "/images/chat.jpeg",
-      title: "Chat App",
-      description: "A real-time chat application using React and Firebase.",
+      // title: "Chat App",
+      // description: "A real-time chat application using React and Firebase.",
     },
     {
-      link: "https://github.com/anuvihas-sk/QR-Code-Generator",
+      link: "https://github.com/anuvihas/QR-Code-Generator",
       image: "/images/qr.jpeg",
-      title: "QR Code Generator",
-      description: "A simple QR Code generator built with React.",
+      // title: "QR Code Generator",
+      // description: "A simple QR Code generator built with React.",
     },
     {
       link: "https://github.com/anuvihas/Todo-List-Application",
       image: "/images/todo.jpeg",
-      title: "To-Do List App",
-      description: "Manage tasks efficiently with this minimal to-do app.",
+      // title: "To-Do List App",
+      // description: "Manage tasks efficiently with this minimal to-do app.",
     },
     {
-      link: "https://github.com/anuvihas/Weather-Application/tree/394a38f24c58806c6021ce807f3928e68b82d2ff",
+      link: "https://github.com/anuvihas/Weather-Application",
       image: "/images/weather.jpeg",
-      title: "Weather App",
-      description: "A weather forecast app using APIs and React.",
+     // description: "A weather forecast app using APIs and React.",
     },
     {
       link: "https://github.com/anuvihas-sk/Redditbot",
       image: "/images/reddit.jpeg",
-      title: "Reddit Bot",
-      description: "Automated Reddit post handler using Python.",
+      // title: "Reddit Bot",
+      // description: "Automated Reddit post handler using Python.",
     },
   ];
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.bootstrap) {
-      // Initialize Bootstrap Carousel
-      new window.bootstrap.Carousel(
-        document.querySelector("#carouselExampleCaptions")
-      );
-    }
-  }, []);
 
   return (
     <section
@@ -59,7 +51,6 @@ const ProjectsSection = () => {
           <p className="fs-5 text-secondary">Showcasing my latest work</p>
         </div>
 
-        {/* Bootstrap Carousel */}
         <div
           id="carouselExampleCaptions"
           className="carousel slide"
@@ -74,7 +65,6 @@ const ProjectsSection = () => {
                 data-bs-slide-to={index}
                 className={index === 0 ? "active" : ""}
                 aria-label={`Slide ${index + 1}`}
-                aria-current={index === 0 ? "true" : undefined}
               ></button>
             ))}
           </div>
@@ -85,78 +75,41 @@ const ProjectsSection = () => {
                 key={index}
                 className={`carousel-item ${index === 0 ? "active" : ""}`}
                 style={{
-                  height: "400px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  background: `linear-gradient(
-                    rgba(0, 0, 0, 0.5),
-                    rgba(0, 0, 0, 0.5)
-                  ), url(${project.image}) no-repeat center center`,
+                  background: `url(${project.image}) no-repeat center center`,
                   backgroundSize: "cover",
+                  height: "400px",
                 }}
               >
-                <div className="carousel-caption text-light">
-                  <h3 className="fw-bold">{project.title}</h3>
+                <div className="carousel-caption">
+                  <h5>{project.title}</h5>
                   <p>{project.description}</p>
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-dark btn-lg"
-                      style={{
-                        backgroundColor: "#333",
-                        borderColor: "#333",
-                        borderRadius: "25px",
-                      }}
-                    >
-                      View Project
-                    </a>
-                  )}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-dark"
+                  >
+                    View Project
+                  </a>
                 </div>
               </div>
             ))}
           </div>
 
           <button
-            className="carousel-control-prev custom-control-prev"
+            className="carousel-control-prev"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev"
-            style={{
-              top: "50%",
-              transform: "translateY(-50%)",
-              backgroundColor: "#333",
-              color: "#fff",
-              borderRadius: "50%",
-              width: "50px",
-              height: "50px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
           >
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Previous</span>
           </button>
           <button
-            className="carousel-control-next custom-control-next"
+            className="carousel-control-next"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide="next"
-            style={{
-              top: "50%",
-              transform: "translateY(-50%)",
-              backgroundColor: "#333",
-              color: "#fff",
-              borderRadius: "50%",
-              width: "50px",
-              height: "50px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
           >
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Next</span>
